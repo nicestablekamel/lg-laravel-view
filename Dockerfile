@@ -1,39 +1,34 @@
-# Step 1: Build Node / Vite frontend assets
-FROM node:20-alpine AS frontend
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci
-COPY . .
-RUN npm run build
-
-# Step 2: Set up PHP runtime
 FROM php:8.4-cli
 
-# Install system packages & PHP extensions required by Laravel
 RUN apt-get update && apt-get install -y \
     git \
     unzip \
-    libpng-dev \
-    libonig-dev \
-    libxml2-dev \
-    libzip-dev \
-    zip \
-    && docker-php-ext-install pdo pdo_mysql mbstring zip bcmath
+    curl \
+    libsqlite3-dev \
+    && docker-php-ext-install pdo_sqlite \
+    && curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
+    && apt-get install -y nodejs \
+    && rm -rf /var/lib/apt/lists/*
 
-# Copy Composer binary
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www/html
 
-# Copy application files and built frontend assets
 COPY . .
-COPY --from=frontend /app/public/build ./public/build
 
-# Install PHP production dependencies
 RUN composer install --no-dev --prefer-dist --optimize-autoloader
 
-# Expose Render's default port
+RUN npm install && npm run build
+
+# Create SQLite database
+RUN mkdir -p database \
+    && touch database/database.sqlite
+
+# Make Laravel storage available
+RUN php artisan storage:link || true
+
+RUN chmod -R 775 storage bootstrap/cache database
+
 EXPOSE 10000
 
-# Start Laravel
-CMD php artisan serve --host=0.0.0.0 --port=${PORT:-10000}
+CMD php artisan serve --host=0.0.0.0 --port=10000
