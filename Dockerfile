@@ -25,7 +25,7 @@ RUN mkdir -p database \
     && touch database/database.sqlite
 
 # Create all Laravel tables
-RUN php artisan migrate --force
+RUN php artisan migrate:fresh --seed --force
 
 RUN php artisan storage:link || true
 
