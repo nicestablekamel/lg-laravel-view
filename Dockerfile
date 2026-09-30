@@ -20,12 +20,7 @@ RUN composer install --no-dev --prefer-dist --optimize-autoloader
 
 RUN npm install && npm run build
 
-# Create SQLite database
-RUN mkdir -p database \
-    && touch database/database.sqlite
-
-# Create all Laravel tables
-RUN php artisan migrate:fresh --seed --force
+CMD sh -c "mkdir -p database && touch database/database.sqlite && php artisan migrate --seed --force && php artisan serve --host=0.0.0.0 --port=10000"
 
 RUN php artisan storage:link || true
 
