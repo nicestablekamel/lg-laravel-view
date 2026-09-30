@@ -60,7 +60,7 @@ export function invoiceTemplate(data, invoiceNumber, repairman = false) {
   return `
     <div class="invoice-top">
       <div class="company">
-        <div class="logo-placeholder"><img src="lglogo.png" alt=""></div>
+        <div class="logo-placeholder"><img src="{{ asset('lglogo.png') }}" alt=""></div>
         <div>
           <h3>${escapeHtml(data.company_name || 'LG Service Aprés-vente')}</h3>
           <p>${escapeHtml(data.company_address)}</p>
