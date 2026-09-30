@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Link } from '@inertiajs/vue3';
-import { BookOpen, Box, FolderGit2, LayoutGrid, List, Plus } from '@lucide/vue';
+import { BookOpen, Box, FolderGit2, LayoutGrid, List, Mail, MessageCircle, Phone, Plus } from '@lucide/vue';
 import AppLogo from '@/components/AppLogo.vue';
 import NavFooter from '@/components/NavFooter.vue';
 import NavMain from '@/components/NavMain.vue';
@@ -20,6 +20,7 @@ import type { NavItem } from '@/types';
 import { index as invoicesIndex } from '@/routes/invoices'
 import { create } from '@/routes/invoices';
 import { index as partsIndex } from '@/routes/parts'
+import { email } from '@/routes/password';
 
 const mainNavItems: NavItem[] = [
     {
@@ -48,14 +49,14 @@ const mainNavItems: NavItem[] = [
 
 const footerNavItems: NavItem[] = [
     {
-        title: 'Repository',
-        href: 'https://github.com/laravel/vue-starter-kit',
-        icon: FolderGit2,
+        title: '+213 778 64 24 19',
+        href: 'tel: +213 778 64 24 19',
+        icon: Phone,
     },
     {
-        title: 'Documentation',
-        href: 'https://laravel.com/docs/starter-kits#vue',
-        icon: BookOpen,
+        title: 'Email Support',
+        href: 'mailto: amranikamel016@gmail.com',
+        icon: Mail,
     },
 ];
 </script>

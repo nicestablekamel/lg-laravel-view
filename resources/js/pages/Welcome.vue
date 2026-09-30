@@ -63,13 +63,13 @@ import { register } from '@/routes';
                                 </span>
                             </span>
                             <span>
-                               Lire la
+                               Contact Support 
                                 <a
-                                    href="https://laravel.com/docs"
+                                    href="mailto: amranikamel016@gmail.com"
                                     target="_blank"
                                     class="ml-1 inline-flex items-center space-x-1 font-medium text-[#f53003] underline underline-offset-4 dark:text-[#FF4433]"
                                 >
-                                    <span>Documentation</span>
+                                    <span>E-mail</span>
                                     <svg
                                         width="10"
                                         height="11"
@@ -102,13 +102,13 @@ import { register } from '@/routes';
                                 </span>
                             </span>
                             <span>
-                                Voir les vidéos
+                                Contact Dev
                                 <a
-                                    href="https://laracasts.com"
+                                    href="tel: +213 778 64 24 19"
                                     target="_blank"
                                     class="ml-1 inline-flex items-center space-x-1 font-medium text-[#f53003] underline underline-offset-4 dark:text-[#FF4433]"
                                 >
-                                    <span>Youtube</span>
+                                    <span>Number</span>
                                     <svg
                                         width="10"
                                         height="11"
