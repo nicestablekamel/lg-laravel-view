@@ -1,0 +1,40 @@
+/*
+ * Shared color tokens. Import this at the top of any page-level CSS file
+ * (invoice.css, history.css, etc.) so the variables exist regardless of
+ * which page's Vite chunk loads first.
+ *
+ * Dark mode is keyed off a `.dark` class on <html>, matching the starter
+ * kit's appearance toggle (Tailwind's class-based dark mode / the
+ * useAppearance composable) — not `prefers-color-scheme`.
+ */
+:root {
+  --bg: #f3f5f8;
+  --panel: #ffffff;
+  --text: #17191d;
+  --text-soft: #4f545c;
+  --muted: #747982;
+  --border: #e3e6eb;
+  --accent: #a50034;
+  --accent-dark: #82002a;
+  --accent-tint: #fff7f9;
+  --soft: #f8f9fb;
+  --green: #18845b;
+  --shadow: rgba(16, 24, 40, .04);
+  --mat: #e9ecf1;
+}
+
+:root.dark {
+  --bg: #101114;
+  --panel: #1b1c20;
+  --text: #eceef1;
+  --text-soft: #c7cad0;
+  --muted: #9195a0;
+  --border: #2c2e34;
+  --accent: #e0335f;
+  --accent-dark: #ff5d84;
+  --accent-tint: #2a1620;
+  --soft: #212327;
+  --green: #34c98a;
+  --shadow: rgba(0, 0, 0, .35);
+  --mat: #0a0b0d;
+}

@@ -1,0 +1,131 @@
+@import './theme.css';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+  
+  font-family: "Montserrat", sans-serif;
+  
+}
+.history-page {
+  width: min(1200px, calc(100% - 40px));
+  margin: 20px auto;
+}
+
+.history-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 5px 22px var(--shadow);
+  padding: 24px;
+  color: var(--text);
+}
+
+.history-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.history-toolbar h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.history-search {
+  width: 260px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 13px;
+  outline: none;
+  background: var(--panel);
+  color: var(--text);
+}
+
+.history-table-wrap {
+  overflow-x: auto;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.history-table th,
+.history-table td {
+  text-align: left;
+  padding: 11px 10px;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.history-table th {
+  color: var(--muted);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+.history-empty {
+  padding: 40px 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.history-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.history-actions button {
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text-soft);
+  border-radius: 6px;
+  padding: 6px 9px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.history-actions button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.history-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 16px;
+}
+
+.history-pagination a,
+.history-pagination span {
+  display: inline-block;
+  padding: 6px 11px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--text-soft);
+  text-decoration: none;
+}
+
+.history-pagination a:hover {
+  border-color: var(--accent);
+  color: #beb9b9;
+}
+
+.history-pagination .active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.history-pagination .disabled {
+  color: #fff;
+}
