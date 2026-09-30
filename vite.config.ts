@@ -27,10 +27,14 @@ export default defineConfig(({ command }) => ({
                 },
             },
         }),
-        wayfinder({
-            generateOnBuild: command !== 'build',
-            formVariants: true,
-        }),
+        // Only load Wayfinder during development ('serve'), omit completely during 'build'
+        ...(command !== 'build'
+            ? [
+                  wayfinder({
+                      formVariants: true,
+                  }),
+              ]
+            : []),
     ]),
     server: {
         watch: {
