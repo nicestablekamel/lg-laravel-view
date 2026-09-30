@@ -7,7 +7,7 @@ COPY . .
 RUN npm run build
 
 # Step 2: Set up PHP runtime
-FROM php:8.3-cli
+FROM php:8.4-cli
 
 # Install system packages & PHP extensions required by Laravel
 RUN apt-get update && apt-get install -y \
