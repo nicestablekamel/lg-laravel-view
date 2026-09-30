@@ -116,7 +116,7 @@ function printInvoice(repairman = false) {
   <div class="app-shell">
     <header class="topbar">
       <div class="brand">
-        <div class="brand-mark"><img src="/assets/logo.png" alt="" /></div>
+        <div class="brand-mark"><img src="/lglogo.png" alt="" /></div>
         <div>
           <h1>Service aprés-vente</h1>
           <p>facture de réparation</p>
