@@ -28,6 +28,7 @@ export default defineConfig({
             },
         }),
         wayfinder({
+            generateOnBuild: command !== 'build',
             formVariants: true,
         }),
     ]),
