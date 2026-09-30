@@ -141,12 +141,12 @@ function printInvoice(repairman = false) {
         <form @submit.prevent="handleSubmit">
           <div class="section-title">Informations sur l'entreprise</div>
           <div class="grid two">
-            <label>L'entreprise<input v-model="form.company_name" type="text" /></label>
-            <label>Numéro<input v-model="form.company_phone" type="text" /></label>
-            <label>Email<input v-model="form.company_email" type="email" /></label>
-            <label>Addresse<input v-model="form.company_address" type="text" /></label>
+            <label>L'entreprise<input v-model="form.company_name" type="text" class="transition-all duration-300 ease-out hover:shadow-lg" /></label>
+            <label>Numéro<input v-model="form.company_phone" type="text" class="transition-all duration-300 ease-out hover:shadow-lg" /></label>
+            <label>Email<input v-model="form.company_email" type="email" class="transition-all duration-300 ease-out hover:shadow-lg" /></label>
+            <label>Addresse<input v-model="form.company_address" type="text" class="transition-all duration-300 ease-out hover:shadow-lg" /></label>
           </div>
-
+          
           <div class="section-title">Informations sur le client</div>
           <div class="grid two">
             <label>Nom et prénom *<input v-model="form.client_name" type="text" placeholder="Nom complet du client" required /></label>
@@ -176,11 +176,11 @@ function printInvoice(repairman = false) {
             <div class="field-group">
               <span class="label">État de la réparation *</span>
               <div class="status-options">
-                <label class="radio-card" :class="{ active: form.repair_status === 'Active' }">
+                <label class="radio-card transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-lg" :class="{ active: form.repair_status === 'Active' } ">
                   <input v-model="form.repair_status" type="radio" name="repairStatus" value="Active" />
                   <span>Active</span>
                 </label>
-                <label class="radio-card" :class="{ active: form.repair_status === 'Not Active' }">
+                <label class="radio-card transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-lg" :class="{ active: form.repair_status === 'Not Active' }">
                   <input v-model="form.repair_status" type="radio" name="repairStatus" value="Not Active" />
                   <span>Inactif</span>
                 </label>
@@ -208,7 +208,7 @@ function printInvoice(repairman = false) {
               <button type="button" class="remove-row-btn" @click="removePartRow(index)">×</button>
             </div>
 
-            <button type="button" class="add-row-btn" @click="addPartRow">+ Ajouter une pièce</button>
+            <button type="button" class="add-row-btn transition-all duration-300 ease-out hover:shadow-lg" @click="addPartRow">+ Ajouter une pièce</button>
             <div v-if="form.errors.parts" class="field-error">{{ form.errors.parts }}</div>
           </div>
 
@@ -216,8 +216,8 @@ function printInvoice(repairman = false) {
           <label>Politique / note<textarea v-model="form.policy_note" rows="4"></textarea></label>
 
           <div class="form-actions">
-            <button type="button" class="secondary-btn" @click="resetForm">Reset</button>
-            <button type="submit" class="primary-btn" :disabled="generating">
+            <button type="button" class="secondary-btn transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-lg" @click="resetForm">Reset</button>
+            <button type="submit" class="primary-btn transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-lg" :disabled="generating">
               {{ generating ? 'Generating...' : 'Enregistrer et télécharger' }}
             </button>
           </div>
@@ -233,8 +233,8 @@ function printInvoice(repairman = false) {
             <h2>Client invoice</h2>
           </div>
           <div class="print-actions">
-            <button class="icon-btn" type="button" @click="printInvoice(false)">Imprimer pour le client</button>
-            <button class="icon-btn" type="button" @click="printInvoice(true)">Impression pour réparateur</button>
+            <button class="icon-btn" type="button transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-lg" @click="printInvoice(false)">Imprimer pour le client</button>
+            <button class="icon-btn" type="button transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-lg" @click="printInvoice(true)">Impression pour réparateur</button>
           </div>
         </div>
 

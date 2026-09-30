@@ -104,6 +104,7 @@ function handlePrint(invoice, repairman) {
                     type="button"
                     :disabled="downloading === `${invoice.id}-client`"
                     @click="handleDownload(invoice, false)"
+                    class="transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md "
                   >
                     PDF client
                   </button>
@@ -111,10 +112,11 @@ function handlePrint(invoice, repairman) {
                     type="button"
                     :disabled="downloading === `${invoice.id}-repairman`"
                     @click="handleDownload(invoice, true)"
+                    class="transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md "
                   >
                     PDF réparateur
                   </button>
-                  <button type="button" @click="handlePrint(invoice, false)">Imprimer</button>
+                  <button type="button" @click="handlePrint(invoice, false)" class="transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md ">Imprimer</button>
                 </div>
               </td>
             </tr>

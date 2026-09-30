@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Link } from '@inertiajs/vue3';
-import { BookOpen, Box, FolderGit2, LayoutGrid, List, Mail, MessageCircle, Phone, Plus } from '@lucide/vue';
+import { BookOpen, Box, FolderGit2, LayoutGrid, LayoutTemplate, List, Mail, MessageCircle, Phone, Plus } from '@lucide/vue';
 import AppLogo from '@/components/AppLogo.vue';
 import NavFooter from '@/components/NavFooter.vue';
 import NavMain from '@/components/NavMain.vue';
@@ -26,7 +26,7 @@ const mainNavItems: NavItem[] = [
     {
         title: 'Tableau de bord',
         href: dashboard(),
-        icon: LayoutGrid,
+        icon: LayoutTemplate ,
     },
     {
         title: 'Nouvelle Décharge',

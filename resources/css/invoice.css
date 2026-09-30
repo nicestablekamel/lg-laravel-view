@@ -25,7 +25,9 @@ button, input, textarea, select {
 button {
   cursor: pointer;
 }
-
+input:hover{
+  border-color: var(--accent);
+}
 .topbar {
   height: 76px;
   background: var(--panel);
