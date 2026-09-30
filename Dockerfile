@@ -24,7 +24,9 @@ RUN npm install && npm run build
 RUN mkdir -p database \
     && touch database/database.sqlite
 
-# Make Laravel storage available
+# Create all Laravel tables
+RUN php artisan migrate --force
+
 RUN php artisan storage:link || true
 
 RUN chmod -R 775 storage bootstrap/cache database
